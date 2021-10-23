@@ -1,6 +1,11 @@
-.divdo{
-    background-color: red;
+.classRed {
+    background: red;
+    height: 20px;
+    width: auto;
 }
-.divxanh{
-    background-color: blue;
-}
+.classBlue {
+    background: blue;
+    height: 20px;
+    width: auto;
+   
+  }

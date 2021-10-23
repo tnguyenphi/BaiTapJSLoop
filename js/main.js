@@ -128,24 +128,29 @@ document.querySelector("#btnBai5").onclick = tinhGiaiThua;
  * Bài 6 tạo thẻ div
  */
 
-function taoThe() {
-    var content = "";
-    var divBlue = (document.getElementById("txtBai6").className = "divxanh");
-    var divRed = (document.getElementById("txtBai6").className = "divdo");
-
-    for (var i = 1; i <= 10; i++) {
-        if (i % 2 == 0) {
-            content += (divRed + "</br>");
-        } else {
-            content += (divBlue + "</br>");
-        }
-    }
-    document.querySelector("#txtBai6").innerHTML = content;
+// Tạo Div 
+function taoThe(color, title) {
+    var ele = document.createElement("div");
+    ele.style.width = "auto";
+    ele.style.height = "50px";
+    ele.style.background = color;
+    ele.style.color = "white";
+    ele.innerHTML = title;
+    return ele
 }
-document.querySelector("#btnBai6").onclick = taoThe;
+
+function taoDiv(){
+    for (var i = 1; i<=10; i++){
+        if (i %2 ==0){
+            document.getElementById("txtBai6").appendChild(taoThe("red","thẻ chẵn"));
+        }else 
+        document.getElementById("txtBai6").appendChild(taoThe("blue","thẻ lẻ"));
+    }
+}
+document.querySelector("#btnBai6").onclick = taoDiv;
 
 /**
- * Bài 7: In số nguyên tố
+ * Bài 7: In số nguyên tố 
  */
 
 function kiem_tra_snt(n) {
